@@ -335,6 +335,10 @@ module.exports = {
           {
             test: cssRegex,
             exclude: cssModuleRegex,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
+            }),
             loader: getStyleLoaders({
               importLoaders: 1,
               sourceMap: shouldUseSourceMap,
@@ -482,6 +486,11 @@ module.exports = {
       ],
     }),
   ],
+
+  new ExtractTextPlugin({
+      filename: 'app.css',
+      allChunks: true
+  }),
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
