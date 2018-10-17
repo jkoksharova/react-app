@@ -27,6 +27,6 @@ class OrderSummary extends Component {
             </Wrapper>
         )
     }
-};
+}
 
 export default OrderSummary;
