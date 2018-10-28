@@ -1,6 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
-import {SET_AUTH_REDIRECT_PATH} from "../actions/actionTypes";
 
 const initialState = {
     token: null,
